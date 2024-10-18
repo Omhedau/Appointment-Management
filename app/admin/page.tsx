@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 const Admin = async () => {
+  
   const appointments = await getRecentAppointmentList();
 
   return (
@@ -43,6 +44,7 @@ const Admin = async () => {
           <StatCard
             type="pending"
             count={appointments.pendingCount}
+
             label="Pending appointments"
             icon={"/assets/icons/pending.svg"}
           />
@@ -53,7 +55,7 @@ const Admin = async () => {
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>
-
+        {/* <p>hello om</p> */}
         <DataTable columns={columns} data={appointments.documents} />
       </main>
     </div>
